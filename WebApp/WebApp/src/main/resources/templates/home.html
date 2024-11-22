@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <title>Student Info & Calculator</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 th:text="'Student Info'">Student Info</h1>
+    <form action="addObject" method="get">
+        <label for="aid">Enter ID :</label>
+        <input type="text" id="aid" name="id" placeholder="Enter Student ID" required>
+
+        <label for="aname">Enter Name :</label>
+        <input type="text" id="aname" name="name" placeholder="Enter Student Name" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div class="container">
+    <h1 th:text="'Add Two Numbers'">Add Two Numbers</h1>
+    <form action="addNumber" method="get">
+        <label for="num1">Enter 1st Number :</label>
+        <input type="text" id="num1" name="num1" placeholder="Enter first number" required>
+
+        <label for="num2">Enter 2nd Number :</label>
+        <input type="text" id="num2" name="num2" placeholder="Enter second number" required>
+
+        <input type="submit" value="Add Numbers">
+    </form>
+</div>
+
+</body>
+</html>

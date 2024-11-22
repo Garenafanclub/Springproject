@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+<!--<h1 th:text="'Calculator'"></h1>-->
+<!--<form action="Add">-->
+<!--    <label for="num1">Enter 1st Number :</label>-->
+<!--    <input type="text" id="num1" name="num1"><br>-->
+<!--    <label for="num2">Enter 2nd Number :</label>-->
+<!--    <input type="text" id="num2" name="num2"><br>-->
+<!--    <input type="submit" value="Submit">-->
+<!--</form>-->
+<h1 th:text="'Student Info'"></h1>
+<form action="addObject" method="get">
+    <label for="aid">Enter id :</label>
+    <input type="text" id="aid" name="id"><br>
+    <label for="aname">Enter name :</label>
+    <input type="text" id="aname" name="name"><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

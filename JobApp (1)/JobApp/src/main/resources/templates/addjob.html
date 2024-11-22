@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container">
+        <a class="navbar-brand" href="#">Job Portal</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/addjob}">Add Job</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/viewalljobs}">View All Jobs</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+    <h2 class="text-center">Post a New Job</h2>
+    <form th:action="@{/handleForm}" th:object="${jobPost}" method="post">
+        <div class="mb-3">
+            <label for="id" class="form-label">Job ID</label>
+            <input type="number" class="form-control" id="id" th:field="*{id}" required>
+        </div>
+        <div class="mb-3">
+            <label for="postProfile" class="form-label">Job Position</label>
+            <input type="text" class="form-control" id="postProfile" th:field="*{postProfile}" required>
+        </div>
+        <div class="mb-3">
+            <label for="postDesc" class="form-label">Job Description</label>
+            <textarea class="form-control" id="postDesc" th:field="*{postDesc}" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="reqExperience" class="form-label">Experience Required (years)</label>
+            <input type="number" class="form-control" id="reqExperience" th:field="*{reqExperience}" required>
+        </div>
+        <div class="mb-3">
+            <label for="postTechStack" class="form-label">Tech Stack</label>
+            <select multiple class="form-select" id="postTechStack" th:field="*{postTechStack}" required>
+                <option value="" disabled selected>Select Technologies</option>
+                <option th:value="'Java'">Java</option>
+                <option th:value="'Spring'">Spring</option>
+                <option th:value="'JavaScript'">JavaScript</option>
+                <option th:value="'Cloud Computing'">Cloud Computing</option>
+                <option th:value="'Go'">Go</option>
+                <option th:value="'Python'">Python</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

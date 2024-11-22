@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="alien1" class="org.ReviseSpring.Classes.Alien" autowire="byType">
+
+<!--    <constructor-arg value="21"/>-->
+<!--    <constructor-arg ref="lap"/>-->
+
+<!--        <constructor-arg type = "org.ReviseSpring.Classes.Laptop" ref="lap"/>-->
+<!--        <constructor-arg type = "int" value="21"/> -->
+
+<!--    <constructor-arg index="1" ref="lap"/>-->
+<!--    <constructor-arg index="0" value="21"/>-->
+
+    <property name="age" value="21"/>
+    <property name="computer">
+        <bean id = "des" class="org.ReviseSpring.Classes.Desktop" lazy-init="true"/>
+    </property>
+
+</bean>
+    <bean id = "lap" class="org.ReviseSpring.Classes.Laptop" primary="true"/>
+<!--    <bean id = "des" class="org.ReviseSpring.Classes.Desktop" lazy-init="true"/>-->
+</beans>
